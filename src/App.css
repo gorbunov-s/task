@@ -1,32 +1,91 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+	height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
 }
+.TopNav_Style-0001 {
+	list-style: none;
+	display:flex;
+	background: #f2706d;
+	margin: 0;
+	align-items: center;
+}
+.TopNav_Style-current {
+	padding: 20px;
+	font-size:1.5em;
+	cursor: pointer;
+  color: #f4e9e9;
+	background: #e8433f;
+	font-weight: 500;
+}
+.TopNav_Style-0003 {
+	padding: 20px;
+	font-size:1.5em;
+	cursor: pointer;
+	color: #f4e9e9;
+}
+.HomePage_Style-0001 {
+	text-align: center;
+	font-size:30px;
+	padding-top: 40px;
+}
+.ItemsPage_Style-0001 {
+	display: flex;
+	min-height: 600px;
+}
+.ItemsPage_Style-0002 {
+	width: 190px;
+	border-right: 1px solid #ddd;
+}
+.ItemsPage_Style-0003 {
+	padding: 30px;
+}
+.LeftNav_Style-0001 {
+	display: flex;
+  flex-direction: column;
+  list-style-type: none;
+	padding: 0;
+}
+.LeftNav_Style-active {
+	line-height: 48px;
+	padding: 0 25px;
+	cursor: pointer;
+	text-decoration: none;
+	color: red;
+	background: #eee;	
+	font-weight: 500;	
+}
+.LeftNav_Style-active:hover {
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+.LeftNav_Style-0003 {
+	line-height: 48px;
+	padding: 0 25px;
+	cursor: pointer;
+	text-decoration: none;
+	color: black;
+}
+.LeftNav_Style-0003:hover {
+	color: red;
+	background: #eee;
+}
+.App-footer {
+	text-align: center;
+	border-top: thin solid #ddd;
+	font-size: 14px;
 }

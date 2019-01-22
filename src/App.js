@@ -1,28 +1,58 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import MainMenu from './components/MainMenu.js';
+import SideMenu from './components/SideMenu.js';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+function App() {
+  return (
+    <Router>
+      <div className="container">
+        <div className="content">
+          <header>
+            <MainMenu />
+          </header>
+          <Switch>
+						<Route exact path="/" component={Home} />
+						<Route path="/items" component={Items} />
+						<Route render={({ match }) => ( match && <Redirect to="/" /> )} />
+					</Switch>
+        </div>
+
+        <footer className="App-footer">
+          <p className="footerDescription">
+            Built using scalajs/scalajs-react/scalacss
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        </footer>
       </div>
-    );
+    </Router>
+  );
+}
+
+function Home() {
+  return <div className="HomePage_Style-0001">ScalaJS-React Template</div>;
+}
+
+function Items(props) {
+  return (
+    <div className="ItemsPage_Style-0001">
+      <div className="ItemsPage_Style-0002">
+        <SideMenu />
+      </div>
+
+      <div className="ItemsPage_Style-0003">
+        <Route path={`${props.match.path}/:itemId`} component={Item} />
+      </div>
+    </div>
+  );
+}
+
+function Item({ match }) {
+  if (match.params.itemId === 'info') {
+    return <div>Items Root Page</div>;
   }
+
+  return <div>This is {match.params.itemId} Page</div>;
 }
 
 export default App;
